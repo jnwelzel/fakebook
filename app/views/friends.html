@@ -1,1 +1,12 @@
-<p>Are you kidding me? You have NO FRIENDS!</p>
+<div class="search-container">
+  <input type="text" placeholder="Search by name" id="friend-filter-input" ng-model="searchField">
+</div>
+
+<div id="friends-container">
+  <div class="mdl-grid">
+    <div class="friend-card mdl-cell mdl-cell--3-col" ng-repeat="friend in $storage.githubbers | filter:searchField">
+      <img class="avatar" ng-src="{{friend.avatar_url}}" />
+      <span class="name">{{friend.login}}</span>
+    </div>
+  </div>
+</div>

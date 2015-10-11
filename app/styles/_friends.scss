@@ -1,0 +1,21 @@
+#friends-container {
+  max-width: 1024px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.friend-card {
+}
+
+.friend-card .avatar {
+  width: 220px;
+  height: 220px;
+}
+
+.friend-card .name {
+  line-height: 30px;
+}
+
+.friend-card:hover .avatar {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.58);
+}

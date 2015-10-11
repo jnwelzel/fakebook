@@ -13,9 +13,13 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ngStorage',
+    'ngDialog',
+    'ngFoobar'
   ])
   .config(function ($routeProvider) {
+    console.log('CONFIG');
     $routeProvider
       .when('/', {
         templateUrl: 'views/feed.html',

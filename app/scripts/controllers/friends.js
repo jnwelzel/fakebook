@@ -8,11 +8,10 @@
  * Controller of the fakebookApp
  */
 angular.module('fakebookApp')
-  .controller('FriendsCtrl', function () {
-    console.log('lmao');
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('FriendsCtrl', ['$scope', '$sessionStorage', function ($scope, $sessionStorage) {
+
+    $scope.$storage = $sessionStorage;
+    $scope.searchField = '';
+
+
+  }]);

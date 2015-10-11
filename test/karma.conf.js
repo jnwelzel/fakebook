@@ -29,6 +29,8 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/material-design-lite/material.min.js',
       'bower_components/ngstorage/ngStorage.js',
+      'bower_components/ng-dialog/js/ngDialog.js',
+      'bower_components/ng-foobar/ng-foobar.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

@@ -8,32 +8,25 @@
  * Controller of the fakebookApp
  */
 angular.module('fakebookApp')
-  .controller('FeedCtrl', ['$scope', 'Githubber', 'Quote', function ($scope, Githubber, Quote) {
+  .controller('FeedCtrl', ['$scope', 'Githubber', 'Quote', '$sessionStorage', function ($scope, Githubber, Quote, $sessionStorage) {
 
-    $scope.page = 1;
-    $scope.githubbers = [];
-    $scope.quotes = [];
-
-    $scope.githubbers = Githubber.all($scope.page).success(function(data) {
-      $scope.githubbers = data;
-      Quote.get($scope.page).success(function(data) {
-        for(var i = 0; i < 10; i++) {
-          $scope.githubbers[i].quote = data.result[0]['/people/person/quotations'][i].name;
-        }
-      });
-    });
+    $scope.$storage = $sessionStorage.$default({githubbers: [], page: 0});
 
     $scope.loadNextTen = function() {
-      $scope.page = $scope.page + 1;
-      Githubber.all($scope.page).success(function(data) {
+      $scope.$storage.page = $scope.$storage.page + 1;
+      Githubber.all($scope.$storage.page).success(function(data) {
         var newGithubbers = data;
-        Quote.get($scope.page).success(function(data) {
+        Quote.get($scope.$storage.page).success(function(data) {
           for(var i = 0; i < 10; i++) {
             newGithubbers[i].quote = data.result[0]['/people/person/quotations'][i].name;
           }
+          $scope.$storage.githubbers = $scope.$storage.githubbers.concat(newGithubbers);
         });
-        $scope.githubbers = $scope.githubbers.concat(newGithubbers);
       });
     };
+
+    if($scope.$storage.page === 0) {
+      $scope.loadNextTen();
+    }
 
   }]);

@@ -15,7 +15,7 @@ angular.module('fakebookApp')
     // Public API here
     return {
       all: function (page) {
-        return $http.get('https://api.github.com/repos/RickWong/react-transmit/stargazers?per_page=10&page=' + page);
+        return $http.get('https://api.github.com/repos/facebook/react/stargazers?per_page=10&page=' + page);
       }
     };
   }]);

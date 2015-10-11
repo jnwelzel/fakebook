@@ -10,9 +10,13 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css" />
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css" />
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css" />
+  <link rel="stylesheet" href="bower_components/ng-foobar/ng-foobar.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-plain.css" />
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue-pink.min.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,7 +47,7 @@
       <a href="" class="mdl-layout__tab" onclick="window.location = '#/about'">About</a>
       <button
         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent"
-        id="add">
+        id="add" ng-controller="MainCtrl" ng-click="openStatusModal()">
         <i class="material-icons" role="presentation">edit</i>
         <span class="visuallyhidden">Update status</span>
       </button>
@@ -53,7 +57,6 @@
 
   <main class="mdl-layout__content">
     <div class="content-wrapper" ng-view=""></div>
-    <ng-include src="'views/footer.html'" class="footer-wrapper"></ng-include>
   </main>
 
 </div>
@@ -81,6 +84,8 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/material-design-lite/material.min.js"></script>
 <script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+<script src="bower_components/ng-foobar/ng-foobar.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -92,6 +97,7 @@
 <script src="scripts/controllers/feed.js"></script>
 <script src="scripts/directives/feedstory.js"></script>
 <script src="scripts/services/quote.js"></script>
+<script src="scripts/controllers/main.js"></script>
 <!-- endbuild -->
 </body>
 </html>
