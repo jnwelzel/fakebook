@@ -2,9 +2,10 @@
 
 A fake social network, just like the real one.
 
-## Dependencies
+## Dev Dependencies
 
-- Nodejs
+- NPM (v2.14.x)
+- Nodejs (v4.1.x)
 - Compass (Ruby gem for processing SASS files)
 
 ## Build & development
