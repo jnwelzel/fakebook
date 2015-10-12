@@ -39,6 +39,6 @@ angular.module('fakebookApp')
         scope: $scope,
         cache: false
       });
-    }
+    };
 
   }]);
