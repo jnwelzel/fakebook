@@ -1,5 +1,6 @@
 #feed .avatar {
-  width: 100%;
+  width: 200px;
+  float: left;
 }
 
 #feed .mdl-card {
@@ -10,4 +11,51 @@
   width: 100%;
   text-align: center;
   margin: 50px 0;
+}
+
+.feed-container {
+  margin-top: 80px;
+}
+
+section.feed-card {
+  width: 840px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+section.feed-card .card-content {
+  float: right;
+  width: 640px;
+}
+
+.card-content .name {
+  font-size: 24px;
+  line-height: 60px;
+  padding-left: 15px;
+}
+
+.card-content .text {
+  font-size: 14px;
+  padding-left: 15px;
+  height: 80px;
+}
+
+.card-content .actions {
+  padding-left: 15px;
+  height: 60px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.actions a.mdl-button {
+  color: #2196F3;
+}
+
+.actions a.mdl-button:hover {
+  color: #1976D2;
+  background-color: transparent;
+}
+
+.actions a.mdl-button:active {
+  background-color: transparent;
 }

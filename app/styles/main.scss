@@ -9,6 +9,12 @@
   z-index: 10001;
 }
 
+#add {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -24,6 +30,7 @@
   clear: both;
   height: 0;
 }
+
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
@@ -74,192 +81,6 @@ html, body {
 .mdl-container .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
   background-color: white;
   height: 4px;
-}
-
-.mdl-container main > div.content-wrapper > .mdl-layout__tab-panel {
-  padding: 8px;
-  padding-top: 48px;
-}
-
-.mdl-container .mdl-card {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.mdl-container .mdl-card > * {
-  height: auto;
-}
-
-.mdl-container .mdl-card .mdl-card__supporting-text {
-  margin: 40px;
-  flex-grow: 1;
-  padding: 0;
-  color: inherit;
-  width: calc(100% - 80px);
-}
-
-.mdl-container.mdl-container .mdl-card__supporting-text h4 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.mdl-container .mdl-card__actions {
-  margin: 0;
-  padding: 4px 15px;
-  color: inherit;
-}
-
-.mdl-container .mdl-card__actions a {
-  color: #00BCD4;
-  margin: 0;
-}
-
-.mdl-container .mdl-card__actions a:hover,
-.mdl-container .mdl-card__actions a:active {
-  color: inherit;
-  background-color: transparent;
-}
-
-.mdl-container .mdl-card__supporting-text + .mdl-card__actions {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.mdl-container #add {
-  position: absolute;
-  right: 40px;
-  top: 36px;
-  z-index: 999;
-}
-
-.mdl-container .mdl-layout__content section:not(:last-of-type) {
-  position: relative;
-  margin-bottom: 48px;
-}
-
-.mdl-container section.section--center {
-  max-width: 860px;
-}
-
-.mdl-container #features section.section--center {
-  max-width: 620px;
-}
-
-.mdl-container section > header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mdl-container section > .section__play-btn {
-  min-height: 200px;
-}
-
-.mdl-container section > header > .material-icons {
-  font-size: 3rem;
-}
-
-.mdl-container section > button {
-  position: absolute;
-  z-index: 99;
-  top: 8px;
-  right: 8px;
-}
-
-.mdl-container section .section__circle {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
-
-.mdl-container section .section__text {
-  flex-grow: 1;
-  flex-shrink: 0;
-  padding-top: 8px;
-}
-
-.mdl-container section .section__text h5 {
-  font-size: inherit;
-  margin: 0;
-  margin-bottom: 0.5em;
-}
-
-.mdl-container section .section__text a {
-  text-decoration: none;
-}
-
-.mdl-container section .section__circle-container > .section__circle-container__circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-  margin: 8px 0;
-}
-
-.mdl-container section.section--footer .section__circle--big {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  margin: 8px 32px;
-}
-
-.mdl-container .is-small-screen section.section--footer .section__circle--big {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 8px 16px;
-}
-
-.mdl-container section.section--footer {
-  padding: 64px 0;
-  margin: 0 -8px -8px -8px;
-}
-
-.mdl-container section.section--center .section__text:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, .13);
-}
-
-.mdl-container .mdl-card .mdl-card__supporting-text > h3:first-child {
-  margin-bottom: 24px;
-}
-
-.mdl-container .mdl-layout__tab-panel:not(#feed) {
-  background-color: white;
-}
-
-.mdl-container #features section {
-  margin-bottom: 72px;
-}
-
-.mdl-container #features h4, #features h5 {
-  margin-bottom: 16px;
-}
-
-.mdl-container .toc {
-  border-left: 4px solid #C1EEF4;
-  margin: 24px;
-  padding: 0;
-  padding-left: 8px;
-  display: flex;
-  flex-direction: column;
-}
-
-.mdl-container .toc h4 {
-  font-size: 0.9rem;
-  margin-top: 0;
-}
-
-.mdl-container .toc a {
-  color: #4DD0E1;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 28px;
-  display: block;
-}
-
-.mdl-container .mdl-menu__container {
-  z-index: 99;
 }
 
 .search-container {

@@ -3,14 +3,12 @@
 /**
  * @ngdoc service
  * @name fakebookApp.quote
- * @description
+ * @description This factory service is responsible for fetching quotes by famous people from Google's Freebase
  * # quote
  * Factory in the fakebookApp.
  */
 angular.module('fakebookApp')
-  .factory('Quote', ['$http', function ($http) {
-    // Service logic
-    // ...
+  .factory('quote', ['$http', function ($http) {
 
     var famousPeople = ['Albert Einsten', 'Mark Twain', 'William Shakespeare', 'Barack Obama',
     'Dwight D. Eisenhower', 'Steve Jobs', 'John Lennon', 'Gautama Buddha', 'Woody Allen', 'Charles Dickens',
@@ -19,10 +17,20 @@ angular.module('fakebookApp')
     var query = '[{"type":"/people/person","id":null,"name":"%name%","gender":{"type":"/people/gender","id":null,"name":null},"/people/person/quotations":[{"type":"/media_common/quotation","id":null,"name":null,"subjects":[],"limit":10}]}]';
     var service_url = 'https://www.googleapis.com/freebase/v1/mqlread';
 
+    /**
+     * Returns a random integer between min (inclusive) and max (inclusive)
+     * Using Math.round() will give you a non-uniform distribution!
+     */
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     // Public API here
     return {
       get: function (index) {
-        return $http.get(service_url + '?query=' + query.replace('%name%', famousPeople[index]));
+        return $http.get(service_url + '?query=' + query.replace('%name%', index > 14 ?
+            famousPeople[getRandomInt(0, 14)] : famousPeople[index]));
       }
     };
+
   }]);

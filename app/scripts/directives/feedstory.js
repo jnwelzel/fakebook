@@ -3,16 +3,19 @@
 /**
  * @ngdoc directive
  * @name fakebookApp.directive:feedStory
- * @description
+ * @description Component that shows content in the user's feed/timeline
  * # feedStory
  */
 angular.module('fakebookApp')
   .directive('feedStory', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/directives/feedstory.html',
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the feedStory directive');
+      scope: {
+        avatarSrc: '@',
+        storyId: '@',
+        name: '@',
+        text: '@'
       }
     };
   });
