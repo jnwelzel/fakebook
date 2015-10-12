@@ -10,6 +10,10 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    preprocessors: {
+      '**/*.html': ['ng-html2js']
+    },
+
     // base path, that will be used to resolve files and exclude
     basePath: '../',
 
@@ -35,7 +39,9 @@ module.exports = function(config) {
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
-      "test/spec/**/*.js"
+      "test/spec/**/*.js",
+      // if you wanna load template files in nested directories, you must use this
+      '**/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -60,8 +66,14 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       "karma-phantomjs-launcher",
-      "karma-jasmine"
+      "karma-jasmine",
+      'karma-ng-html2js-preprocessor'
     ],
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
+      moduleName: 'my.templates'
+    },
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

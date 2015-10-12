@@ -6,8 +6,10 @@ describe('Controller: MainCtrl', function () {
   beforeEach(module('fakebookApp'));
 
   var MainCtrl,
-    scope;
+    scope,
+    statusText = '';
 
+  beforeEach(module("my.templates"));
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
@@ -17,7 +19,15 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+  it('should have var with empty status text', function () {
+    expect(scope.statusText).toBe(statusText);
   });
+
+  it('should update status', function() {
+    var newStatus = 'Testing the status update';
+    scope.statusText = newStatus;
+    scope.updateStatus();
+    expect(scope.$storage.posts[0].text).toBe(newStatus);
+  });
+
 });

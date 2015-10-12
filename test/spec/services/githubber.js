@@ -40,7 +40,6 @@ describe('Service: githubber', function () {
     githubber.all(per_page, page).success(function(result) {
       expect(result[0].login).toEqual('goatslacker');
     });
-    httpBackend.flush();
   });
 
 });
