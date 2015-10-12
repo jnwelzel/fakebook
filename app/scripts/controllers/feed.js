@@ -14,9 +14,9 @@ angular.module('fakebookApp')
 
     $scope.loadNextTen = function() {
       $scope.$storage.page = $scope.$storage.page + 1;
-      githubber.all($scope.$storage.page).success(function(data) {
+      githubber.all(10, $scope.$storage.page).success(function(data) {
         var newGithubbers = data;
-        quote.get($scope.$storage.page).success(function(quotes) {
+        quote.get(10, $scope.$storage.page).success(function(quotes) {
           for(var i = 0; i < 10; i++) {
             newGithubbers[i].quote = quotes.result[0]['/people/person/quotations'][i].name;
           }

@@ -14,7 +14,7 @@ angular.module('fakebookApp')
     'Dwight D. Eisenhower', 'Steve Jobs', 'John Lennon', 'Gautama Buddha', 'Woody Allen', 'Charles Dickens',
     'Mahatma Gandhi', 'Nelson Mandela', 'Martin Luther King, Jr.', 'Mother Teresa', 'John F. Kennedy'];
 
-    var query = '[{"type":"/people/person","id":null,"name":"%name%","gender":{"type":"/people/gender","id":null,"name":null},"/people/person/quotations":[{"type":"/media_common/quotation","id":null,"name":null,"subjects":[],"limit":10}]}]';
+    var query = '[{"type":"/people/person","id":null,"name":"%name%","gender":{"type":"/people/gender","id":null,"name":null},"/people/person/quotations":[{"type":"/media_common/quotation","id":null,"name":null,"subjects":[],"limit":%per_page%}]}]';
     var service_url = 'https://www.googleapis.com/freebase/v1/mqlread';
 
     /**
@@ -27,9 +27,10 @@ angular.module('fakebookApp')
 
     // Public API here
     return {
-      get: function (page) {
-        return $http.get(service_url + '?query=' + query.replace('%name%', page > 15 ?
-            famousPeople[getRandomInt(0, 14)] : famousPeople[page - 1]));
+      get: function (per_page, page) {
+        var interpolatedQuery = service_url + '?query=' + query.replace('%name%', page > 15 ?
+            famousPeople[getRandomInt(0, 14)] : famousPeople[page - 1]).replace('%per_page%', per_page);
+        return $http.get(interpolatedQuery);
       }
     };
 
