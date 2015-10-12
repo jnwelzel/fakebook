@@ -34,7 +34,7 @@ angular.module('fakebookApp')
 
     $scope.openStatusModal = function () {
       ngDialog.open({
-        template: 'status-modal.html',
+        template: 'views/modals/status.html',
         className: 'ngdialog-theme-plain',
         scope: $scope,
         cache: false
