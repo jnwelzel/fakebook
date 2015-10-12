@@ -7,7 +7,6 @@ describe('Directive: feedStory', function () {
 
   var element,
     scope,
-    httBackend,
     avatarSrc = 'images/jon.jpeg',
     name = 'Jonathan Welzel',
     text = 'Just testin',

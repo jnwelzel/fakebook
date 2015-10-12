@@ -5,8 +5,7 @@ describe('Controller: FriendsCtrl', function () {
   // load the controller's module
   beforeEach(module('fakebookApp'));
 
-  var FriendsCtrl,
-    scope;
+  var scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {

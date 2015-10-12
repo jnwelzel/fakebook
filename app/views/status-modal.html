@@ -1,0 +1,22 @@
+<script type="text/ng-template" id="status-modal.html">
+  <div class="fb-modal" id="status-modal">
+
+    <form>
+      <div class="body">
+          <input type="text" id="status-text" placeholder="What's on your mind?" name="status-text" ng-model="statusText"
+                 ng-change="statusChange(this.statusText)"/>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--accent" ng-click="updateStatus()">
+          Post
+        </button>
+
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="closeThisDialog('lmao')">
+          Cancel
+        </button>
+      </div>
+    </form>
+
+  </div>
+</script>
