@@ -15,8 +15,6 @@ angular.module('fakebookApp')
     // Public API here
     return {
       all: function (page) {
-        if(page === undefined)
-          page = 1;
         return $http.get('https://api.github.com/repos/facebook/react/stargazers?per_page=10&page=' + page);
       }
     };

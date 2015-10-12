@@ -10,7 +10,7 @@
 angular.module('fakebookApp')
   .factory('quote', ['$http', function ($http) {
 
-    var famousPeople = ['Albert Einsten', 'Mark Twain', 'William Shakespeare', 'Barack Obama',
+    var famousPeople = ['Albert Einstein', 'Mark Twain', 'William Shakespeare', 'Barack Obama',
     'Dwight D. Eisenhower', 'Steve Jobs', 'John Lennon', 'Gautama Buddha', 'Woody Allen', 'Charles Dickens',
     'Mahatma Gandhi', 'Nelson Mandela', 'Martin Luther King, Jr.', 'Mother Teresa', 'John F. Kennedy'];
 
@@ -27,9 +27,9 @@ angular.module('fakebookApp')
 
     // Public API here
     return {
-      get: function (index) {
-        return $http.get(service_url + '?query=' + query.replace('%name%', index > 14 ?
-            famousPeople[getRandomInt(0, 14)] : famousPeople[index]));
+      get: function (page) {
+        return $http.get(service_url + '?query=' + query.replace('%name%', page > 15 ?
+            famousPeople[getRandomInt(0, 14)] : famousPeople[page - 1]));
       }
     };
 

@@ -13,7 +13,7 @@ describe('Service: githubber', function () {
     httpBackend = $httpBackend;
   }));
 
-  it('should return json containing a facebook react github repo follower\'s data', function () {
+  it('should fetch json containing a facebook react github repo follower\'s data', function () {
     httpBackend.whenGET('https://api.github.com/repos/facebook/react/stargazers?per_page=10&page=1').respond([
       {
         "login": "goatslacker",
@@ -35,7 +35,7 @@ describe('Service: githubber', function () {
         "site_admin": false
       }
     ]);
-    githubber.all().success(function(result) {
+    githubber.all(1).success(function(result) {
       expect(result[0].login).toEqual('goatslacker');
     });
     httpBackend.flush();
