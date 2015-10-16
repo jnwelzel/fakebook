@@ -38,12 +38,12 @@
     <div class="mdl-layout--large-screen-only mdl-layout__header-row">
     </div>
 
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-      <a href="" class="mdl-layout__tab is-active" onclick="window.location = '#/'">Home</a>
-      <a href="" class="mdl-layout__tab" onclick="window.location = '#/friends'">Friends</a>
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark" ng-controller="MainCtrl">
+      <a ui-sref="feed" class="tab-bar {{currentPage === 'feed' ? 'active': ''}}">Home</a>
+      <a ui-sref="friends" class="tab-bar">Friends</a>
       <button
         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent"
-        id="add" ng-controller="MainCtrl" ng-click="openStatusModal()">
+        id="add" ng-click="openStatusModal()">
         <i class="material-icons" role="presentation">edit</i>
         <span class="visuallyhidden">Update status</span>
       </button>
@@ -52,7 +52,7 @@
   </header>
 
   <main class="mdl-layout__content">
-    <div class="content-wrapper" ng-view=""></div>
+    <div class="content-wrapper" ui-view=""></div>
   </main>
 
 </div>
@@ -101,12 +101,12 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/material-design-lite/material.min.js"></script>
 <script src="bower_components/ngstorage/ngStorage.js"></script>
 <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
 <script src="bower_components/ng-foobar/ng-foobar.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

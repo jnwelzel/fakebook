@@ -12,25 +12,24 @@ angular
   .module('fakebookApp', [
     'ngCookies',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
     'ngStorage',
     'ngDialog',
-    'ngFoobar'
+    'ngFoobar',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/feed');
+
+    $stateProvider
+      .state('feed', {
+        url: '/feed',
         templateUrl: 'views/feed.html',
-        controller: 'FeedCtrl',
-        controllerAs: 'feed'
+        controller: 'FeedCtrl'
       })
-      .when('/friends', {
+      .state('friends', {
+        url: '/friends',
         templateUrl: 'views/friends.html',
-        controller: 'FriendsCtrl',
-        controllerAs: 'friends'
-      })
-      .otherwise({
-        redirectTo: '/'
+        controller: 'FriendsCtrl'
       });
   });
