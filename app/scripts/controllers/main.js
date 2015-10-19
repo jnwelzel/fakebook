@@ -8,12 +8,10 @@
  * Controller of the fakebookApp
  */
 angular.module('fakebookApp')
-  .controller('MainCtrl', ['$scope', 'ngDialog', 'ngFoobar', '$sessionStorage', '$state', function ($scope, ngDialog, ngFoobar, $sessionStorage, $state) {
+  .controller('MainCtrl', ['$scope', 'ngDialog', 'ngFoobar', '$sessionStorage', function ($scope, ngDialog, ngFoobar, $sessionStorage) {
     ngFoobar.setAutoClose(true, 3000);
     $scope.statusText = '';
     $scope.$storage = $sessionStorage.$default({posts: []});
-    $scope.currentPage = $state.$current.self.name;
-    console.log('$scope.currentState %o', $scope.currentPage);
 
     $scope.updateStatus = function () {
       if(this.statusText.length === 0) {

@@ -33,3 +33,10 @@ angular
         controller: 'FriendsCtrl'
       });
   });
+
+function TabBarClick() {
+  $('.tab-bar').removeClass('active');
+  $(this).addClass('active');
+}
+
+$('.tab-bar').on('click', TabBarClick);

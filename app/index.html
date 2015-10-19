@@ -39,7 +39,7 @@
     </div>
 
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark" ng-controller="MainCtrl">
-      <a ui-sref="feed" class="tab-bar {{currentPage === 'feed' ? 'active': ''}}">Home</a>
+      <a ui-sref="feed" class="tab-bar active">Home</a>
       <a ui-sref="friends" class="tab-bar">Friends</a>
       <button
         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent"
@@ -98,6 +98,7 @@
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
